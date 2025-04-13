@@ -6,7 +6,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -19,8 +18,8 @@ model Person {
   name String
   lastName String
   age Int
-  ci Int @unique
-  gender String?
+  ci String @unique
+  gender String? @default("no definido")
   students Student[]
   professors Professor[]
 }
